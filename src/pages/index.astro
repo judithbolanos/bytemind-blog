@@ -1,11 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import TypeBlogpost from '@components/TypeBlogpost.astro';
+const blogposts = await getCollection('blog', (post) => post.data.isDraft === false);
+import {siteConfig} from "@utils/Config";
+import ImageHeader from '@components/ImageHeader.astro';
+import imagheader from "../assets/images/coding.jpg";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={siteConfig.title}>
+	<!-- component -->
+    <ImageHeader image={imagheader} title={siteConfig.title} description={siteConfig.description}/>
+<section class="bg-gray-900">
+    <div class="container px-6 py-10 mx-auto">
+        <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
+            {blogposts.map(post => (<TypeBlogpost post={post}/>))}
+        </div>  
+    </div>
+</section>
+	
 </Layout>

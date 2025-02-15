@@ -1,0 +1,29 @@
+---
+const All_Links = [
+    { href:"/",text: "Home", icon: 'home'},
+    { href:"/blog/1", text: "Blogs", icon: 'blog' },
+    { href:"/authors",  text: "Autores", icon: 'user' },
+    { href:"/rss.xml",  text: "", icon:'rss' },
+];
+const current_url = Astro.url.pathname;
+import {Icon} from "astro-icon/components"
+---
+
+<nav class="bg-white shadow dark:bg-gray-800">
+    <div class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize dark:text-gray-300">
+        {All_Links.map(({href, text, icon}) => (
+           <div>
+                <a href={href} class="flex gap-3 text-gray-800 dark:text-gray-200 mx-1.5 sm:mx-6">
+                    <Icon name={`${icon}`} size={18} /> {text}
+                </a>
+                { current_url == href ? ( 
+                    <div transition:name="menu-line" class="border-b-2 border-blue-500 mx-4" />
+                ) : (
+                    <div class="border-b-2 border-transparent" />
+                )}
+                {/** <div class="border-b-2 border-blue-500 mx-4"></div> */}
+           </div>
+        ))}
+
+    </div>
+</nav>

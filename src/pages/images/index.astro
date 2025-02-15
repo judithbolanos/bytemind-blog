@@ -1,0 +1,51 @@
+---
+import { Image, Picture } from "astro:assets";
+import Layout from "src/layouts/Layout.astro";
+import Imgpost05 from "@images/post-05.png";
+
+---
+
+<Layout title="Images">
+    <h1 class="text-3xl my-5">Pruebas con imagenes</h1>
+    <hr>
+    <img src="/assets/images/post-05.png" alt="post-5">
+    <div class="my-5"></div>
+    <Image src={Imgpost05} alt="post-5" width="550" height="550" style={{width:'250px', height:'250px'}} />
+    <div class="grid grid-cols-1 gap-1 mt-8 md:mt-16 md:grid-cols-4">
+        <div class="mx-2">
+            <p>quality low </p>
+            <Image src={Imgpost05} quality={'low'} alt="post-5" width="550" height="550" style={{width:'250px', height:'250px'}} />
+        </div>
+        <div class="mx-2">
+            <p>quality high </p>
+            <Image src={Imgpost05} quality={'high'} alt="post-5" width="550" height="550" style={{width:'250px', height:'250px'}} />
+        </div>
+        <div class="mx-2">
+            <p>Format JPG </p>
+            <Image src={Imgpost05} format={'jpg'} alt="post-5" width="550" height="550" style={{width:'250px', height:'250px'}} />
+        </div>
+        <div class="mx-2">
+            <p>Format AVIF </p>
+            <Image src={Imgpost05} format={'avif'} alt="post-5" width="550" height="550" style={{width:'250px', height:'250px'}} />
+        </div>
+        <div class="mx-2">
+            <p>Picture with formats</p>
+            <Picture src={Imgpost05} formats={['webp', 'avif','jpg']} alt="post-5" width="550" height="550" style={{width:'250px', height:'250px'}} />
+        </div>
+        <div class="mx-2">
+            <p>Picture with sizes</p>
+            <Picture 
+            widths={[240, 540, 720, Imgpost05.width]}
+            sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${Imgpost05.width}px`}
+            src={Imgpost05} formats={['webp', 'avif','jpg']} alt="post-5" width="550" height="550" style={{width:'250px', height:'250px'}} />
+        </div>
+        <div class="mx-2">
+            <p>Picture with densities</p>
+            <Picture 
+            width={Imgpost05.width / 2}
+            densities={[1.5, 2]}
+            src={Imgpost05} formats={['webp', 'avif','jpg']} alt="post-5" width="550" height="550" style={{width:'250px', height:'250px'}} />
+        </div>
+    </div>
+</Layout>
+

@@ -1,0 +1,43 @@
+---
+import { Formatter } from "@utils/formatter";
+import { Image } from "astro:assets";
+import {Icon} from "astro-icon/components"
+
+ const {title,description , autor, date , image , slug ,autorId } = Astro.props;
+---
+<div class="max-w-screen-xl mx-auto ">
+
+    <div class="overflow-hidden flex flex-col max-w-7xl mx-auto">
+        <div class="sm:flex justify-between items-center pt-4">
+            <div class="sm:w-8/12 flex flex-col gap-1">
+                <a id="btn-back" href="/" class="bg-teal-800 inline-flex justify-center w-40 px-4 py-2 rounded-2xl items-center"><Icon class={'mx-3'} name="arrow-back" size={18} /> Regresar</a>
+                <h1 class=" font-medium text-md block">{title}</h1>
+                <p class="text-lg">{description}</p>
+            </div>
+            <div class="sm:w-4/12 flex items-center sm:px-6 pb-4">
+                <a
+                    href="#"><Image class="w-20 h-20 rounded-full mr-2" src={autor.avatar} alt="Avatar of Jonathan Reinink"/></a>
+                <div class="ms-4 flex flex-col gap-1">
+                    <a href=`/blog/${autorId}` class="text-amber-50 font-medium leading-none text-2xl hover:text-indigo-600 block">{autor.name}</a>
+                    <span class="text-lg">{autor.subtitle}</span>
+                    <span class="text-lg">{Formatter.formatterDate(date)}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative">
+            <a href="#">
+                <Image transition:name={`${slug}-image`} class="w-full aspect21-5 rounded-2xl" src={image} alt="Sunset in the mountains"/>
+            </a>
+
+        </div>
+    </div>
+
+</div>
+<style>
+    .aspect21-5{
+        aspect-ratio: 21/4.5;
+        object-fit: cover;
+        object-position: center;
+    }
+</style>

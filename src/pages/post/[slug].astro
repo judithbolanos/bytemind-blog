@@ -1,0 +1,51 @@
+---
+import { Formatter } from "@utils/formatter";
+import type { GetStaticPaths } from "astro";
+import {Icon} from "astro-icon/components"
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import BlogLayout from "src/layouts/BlogLayout.astro";
+import HeroBlog from "@components/HeroBlog.astro";
+
+export const getStaticPaths = (async() => {
+    const all_post = await getCollection('blog');
+
+    return all_post.map(post=>(
+        {
+            params:{
+                slug:post.slug,
+            },
+            props:{
+                post:post,
+            }
+        }
+    ));
+}) satisfies GetStaticPaths;
+
+const {post} = Astro.props;
+const frontmatter = post.data;
+const {Content, headings} = await post.render();
+const author = (await getEntry('author', frontmatter.author.id))?.data;
+---
+
+<BlogLayout title={frontmatter.title}>
+    <HeroBlog autorId={frontmatter.author.id} slug={post.slug} date={frontmatter.date} title={frontmatter.title} image={frontmatter.image} description={frontmatter.description} autor={author}/>
+
+    <!--tabla de contenido -->
+    <h3 class="pt-5 text-2xl"> tabla de contenido </h3>
+    <ol>
+        {headings.map((heading, index)=>(
+            <li>
+                <a href={`#${heading.slug}`}>
+                    {index + 1} - {heading.text}
+                </a>
+            </li>
+        ))}
+    </ol>
+    <!-- contenido -->
+    <Content />
+    <div class="mt-20">
+        <a href="#btn-back" class="bg-teal-800 flex justify-center items-center w-10 h-10 rounded-full"><Icon name="arrow-up" size={18} /> </a>
+    </div>
+</BlogLayout>

@@ -1,0 +1,29 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '../styles/global.css'
+import '../styles/blog.css'
+import Menu from 'src/components/Menu.astro';
+interface Props {
+	title:string
+}
+const {title} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+        <ViewTransitions/>
+	</head>
+	<body class="bg-gray-900 text-teal-50 w-full mt-0">
+		<Menu />
+		<main class="mb-10 max-w-7xl m-auto p-2 pt-7 ">
+			
+			<slot />
+		</main>
+	</body>
+</html>
+
