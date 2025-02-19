@@ -1,7 +1,8 @@
 ---
 import { Formatter } from "@utils/formatter";
 import { Image } from "astro:assets";
-import {Icon} from "astro-icon/components"
+import { Icon } from "astro-icon/components"
+import { siteConfig} from "@utils/Config";
 
  const {title,description , autor, date , image , slug ,autorId } = Astro.props;
 ---
@@ -10,7 +11,7 @@ import {Icon} from "astro-icon/components"
     <div class="overflow-hidden flex flex-col max-w-7xl mx-auto">
         <div class="sm:flex justify-between items-center pt-4">
             <div class="sm:w-8/12 flex flex-col gap-1">
-                <a id="btn-back" href="/" class="bg-teal-800 inline-flex justify-center w-40 px-4 py-2 rounded-2xl items-center"><Icon class={'mx-3'} name="arrow-back" size={18} /> Regresar</a>
+                <button id="btn-back" onclick="history.back()" class="bg-teal-800 inline-flex justify-center w-40 px-4 py-2 rounded-2xl items-center"><Icon class={'mx-3'} name="arrow-back" size={18} /> Regresar</button>
                 <h1 class=" font-medium text-md block">{title}</h1>
                 <p class="text-lg">{description}</p>
             </div>
@@ -18,7 +19,7 @@ import {Icon} from "astro-icon/components"
                 <a
                     href="#"><Image class="w-20 h-20 rounded-full mr-2" src={autor.avatar} alt="Avatar of Jonathan Reinink"/></a>
                 <div class="ms-4 flex flex-col gap-1">
-                    <a href=`/blog/${autorId}` class="text-amber-50 font-medium leading-none text-2xl hover:text-indigo-600 block">{autor.name}</a>
+                    <a href=`${siteConfig.basepath}blog/${autorId}` class="text-amber-50 font-medium leading-none text-2xl hover:text-indigo-600 block">{autor.name}</a>
                     <span class="text-lg">{autor.subtitle}</span>
                     <span class="text-lg">{Formatter.formatterDate(date)}</span>
                 </div>
@@ -26,10 +27,7 @@ import {Icon} from "astro-icon/components"
         </div>
 
         <div class="relative">
-            <a href="#">
-                <Image transition:name={`${slug}-image`} class="w-full aspect21-5 rounded-2xl" src={image} alt="Sunset in the mountains"/>
-            </a>
-
+            <Image transition:name={`${slug}-image`} class="w-full aspect21-5 rounded-2xl" src={image} alt="Sunset in the mountains"/>
         </div>
     </div>
 

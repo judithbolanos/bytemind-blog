@@ -1,9 +1,10 @@
 ---
+import {siteConfig} from "@utils/Config";
 const All_Links = [
-    { href:"/",text: "Home", icon: 'home'},
-    { href:"/blog/1", text: "Blogs", icon: 'blog' },
-    { href:"/authors",  text: "Autores", icon: 'user' },
-    { href:"/rss.xml",  text: "", icon:'rss' },
+    { href:`${siteConfig.basepath}`,text: "Home", icon: 'home'},
+    { href:`${siteConfig.basepath}blog/1`, text: "Blogs", icon: 'blog' },
+    { href:`${siteConfig.basepath}authors`,  text: "Autores", icon: 'user' },
+    { href:`${siteConfig.basepath}rss.xml`,  text: "", icon:'rss' },
 ];
 const current_url = Astro.url.pathname;
 import {Icon} from "astro-icon/components"
