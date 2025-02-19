@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import { siteConfig } from "@utils/Config";
+
 
 const {author , id} = Astro.props;
 ---
@@ -15,7 +17,7 @@ const {author , id} = Astro.props;
       <div class="mt-5">
         <h3 class="text-gray-600 text-xl font-semibold">Bio</h3>
         <p class="text-gray-600 mt-2">{author.bio}</p>
-        <a class="text-blue-500 hover:text-blue-700" href={`/blog/${id}`}> Conocer más</a>
+        <a class="text-blue-500 hover:text-blue-700" href={`${siteConfig.basepath}blog/${id}`}> Conocer más</a>
       </div>
     </div>
 
