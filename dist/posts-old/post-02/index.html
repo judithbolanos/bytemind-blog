@@ -1,0 +1,77 @@
+<!DOCTYPE html><meta charset="utf-8"><h1 id="empezando-con-flutter">Empezando con Flutter</h1>
+<p>Flutter es un kit de herramientas de IU para construir aplicaciones compiladas nativamente para móviles, web y escritorio desde un único código base.</p>
+<h2 id="instalación-de-flutter">Instalación de Flutter</h2>
+<p>Para comenzar a desarrollar con Flutter, primero necesitas instalar el SDK de Flutter en tu sistema. Puedes seguir las instrucciones de instalación en la <a href="https://flutter.dev/docs/get-started/install">documentación oficial de Flutter</a>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">flutter</span><span style="color:#9ECBFF"> doctor</span></span></code></pre>
+<p>Este comando te ayudará a verificar si tienes todo lo necesario para comenzar a desarrollar con Flutter.</p>
+<h2 id="creación-de-un-nuevo-proyecto">Creación de un Nuevo Proyecto</h2>
+<p>Puedes crear un nuevo proyecto de Flutter utilizando el siguiente comando:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">flutter</span><span style="color:#9ECBFF"> create</span><span style="color:#9ECBFF"> my_first_app</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> my_first_app</span></span></code></pre>
+<p>Esto creará un nuevo proyecto de Flutter en el directorio <code>my_first_app</code>.</p>
+<h2 id="ejecución-de-la-aplicación">Ejecución de la Aplicación</h2>
+<p>Para ejecutar tu aplicación de Flutter, puedes utilizar el siguiente comando:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">flutter</span><span style="color:#9ECBFF"> run</span></span></code></pre>
+<p>Esto compilará y ejecutará tu aplicación en un emulador o dispositivo conectado. ¡Ahora puedes ver tu aplicación en acción!</p>
+<h2 id="escribiendo-tu-primera-aplicación">Escribiendo tu Primera Aplicación</h2>
+<p>Puedes editar el archivo <code>lib/main.dart</code> para comenzar a escribir tu aplicación de Flutter. Aquí tienes un ejemplo de una aplicación de contador simple.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="dart"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#9ECBFF"> 'package:flutter/material.dart'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">void</span><span style="color:#B392F0"> main</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">  runApp</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">MyApp</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#79B8FF"> MyApp</span><span style="color:#F97583"> extends</span><span style="color:#79B8FF"> StatelessWidget</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  @override</span></span>
+<span class="line"><span style="color:#79B8FF">  Widget</span><span style="color:#B392F0"> build</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">BuildContext</span><span style="color:#E1E4E8"> context) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> MaterialApp</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">      title</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 'Flutter Demo'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">      home</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> MyHomePage</span><span style="color:#E1E4E8">(),</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#79B8FF"> MyHomePage</span><span style="color:#F97583"> extends</span><span style="color:#79B8FF"> StatefulWidget</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  @override</span></span>
+<span class="line"><span style="color:#79B8FF">  _MyHomePageState</span><span style="color:#B392F0"> createState</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">=></span><span style="color:#79B8FF"> _MyHomePageState</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">class</span><span style="color:#79B8FF"> _MyHomePage</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">State</span><span style="color:#F97583"> extends</span><span style="color:#79B8FF"> State</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#79B8FF">MyHomePage</span><span style="color:#E1E4E8">> {</span></span>
+<span class="line"><span style="color:#79B8FF">  int</span><span style="color:#E1E4E8"> _counter </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  void</span><span style="color:#B392F0"> _incrementCounter</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#B392F0">    setState</span><span style="color:#E1E4E8">(() {</span></span>
+<span class="line"><span style="color:#E1E4E8">      _counter</span><span style="color:#F97583">++</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    });</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  @override</span></span>
+<span class="line"><span style="color:#79B8FF">  Widget</span><span style="color:#B392F0"> build</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">BuildContext</span><span style="color:#E1E4E8"> context) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> Scaffold</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">      appBar</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> AppBar</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        title</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> Text</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Flutter Demo'</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#E1E4E8">      ),</span></span>
+<span class="line"><span style="color:#E1E4E8">      body</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> Center</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        child</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> Column</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">          mainAxisAlignment</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> MainAxisAlignment</span><span style="color:#E1E4E8">.center,</span></span>
+<span class="line"><span style="color:#E1E4E8">          children</span><span style="color:#F97583">:</span><span style="color:#F97583"> &#x3C;</span><span style="color:#79B8FF">Widget</span><span style="color:#F97583">></span><span style="color:#E1E4E8">[</span></span>
+<span class="line"><span style="color:#79B8FF">            Text</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#9ECBFF">              'You have pushed the button this many times:'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">            ),</span></span>
+<span class="line"><span style="color:#79B8FF">            Text</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#9ECBFF">              '</span><span style="color:#9ECBFF">$</span><span style="color:#79B8FF">_counter</span><span style="color:#9ECBFF">'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">              style</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> Theme</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">of</span><span style="color:#E1E4E8">(context).textTheme.headline4,</span></span>
+<span class="line"><span style="color:#E1E4E8">            ),</span></span>
+<span class="line"><span style="color:#E1E4E8">          ],</span></span>
+<span class="line"><span style="color:#E1E4E8">        ),</span></span>
+<span class="line"><span style="color:#E1E4E8">      ),</span></span>
+<span class="line"><span style="color:#E1E4E8">      floatingActionButton</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> FloatingActionButton</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">        onPressed</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> _incrementCounter,</span></span>
+<span class="line"><span style="color:#E1E4E8">        tooltip</span><span style="color:#F97583">:</span><span style="color:#9ECBFF"> 'Increment'</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">        child</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> Icon</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">Icons</span><span style="color:#E1E4E8">.add),</span></span>
+<span class="line"><span style="color:#E1E4E8">      ),</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>

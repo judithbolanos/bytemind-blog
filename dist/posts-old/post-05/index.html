@@ -1,0 +1,40 @@
+<!DOCTYPE html><meta charset="utf-8"><h1 id="css-grid-layout-una-guía-completa">CSS Grid Layout: Una guía completa</h1>
+<p>CSS Grid Layout es una poderosa herramienta que te permite crear diseños complejos de forma sencilla y flexible. En esta guía, aprenderás cómo utilizar CSS Grid Layout para crear diseños de páginas web modernas y responsivas.</p>
+<h2 id="introducción-a-css-grid">Introducción a CSS Grid</h2>
+<p>CSS Grid Layout es un sistema de diseño bidimensional que te permite crear diseños de páginas web utilizando filas y columnas. Con CSS Grid Layout, puedes crear diseños complejos y flexibles sin necesidad de utilizar floats o frameworks de diseño.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.container</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">grid</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  grid-template-columns</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">repeat</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#F97583">fr</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#79B8FF">  gap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">10</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Este grid container creará una cuadrícula con tres columnas y un espacio de 10px entre los elementos de la cuadrícula. También puedes utilizar la propiedad <code>grid-template-rows</code> para definir las filas de la cuadrícula.</p>
+<h2 id="grid-items">Grid Items</h2>
+<p>Los elementos dentro de un grid container se denominan grid items. Puedes colocar los grid items en la cuadrícula utilizando las propiedades <code>grid-column</code> y <code>grid-row</code>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.item</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  grid-column</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8"> / </span><span style="color:#79B8FF">4</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  grid-row</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8"> / </span><span style="color:#79B8FF">3</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Este código colocará el elemento en la segunda y tercera columnas y en la primera y segunda filas de la cuadrícula.</p>
+<h2 id="grid-areas">Grid Areas</h2>
+<p>CSS Grid Layout también te permite definir áreas con nombre en tu cuadrícula. Esto hace que sea más fácil colocar elementos en áreas específicas de la cuadrícula.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.container</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  grid-template-areas</span><span style="color:#E1E4E8">:</span></span>
+<span class="line"><span style="color:#9ECBFF">    'header header header'</span></span>
+<span class="line"><span style="color:#9ECBFF">    'sidebar content content'</span></span>
+<span class="line"><span style="color:#9ECBFF">    'footer footer footer'</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">.item</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  grid-area</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">content</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Este código define un grid container con áreas de encabezado, barra lateral, contenido y pie de página. El elemento con la clase <code>item</code> se colocará en el área de contenido de la cuadrícula.</p>
+<h2 id="responsive-grids">Responsive Grids</h2>
+<p>CSS Grid Layout es perfecto para crear diseños responsivos. Puedes utilizar las funciones <code>minmax()</code> y <code>auto-fill</code> para crear cuadrículas que se adapten a diferentes tamaños de pantalla.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.container</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">grid</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">  grid-template-columns</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">repeat</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">auto-fill</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">minmax</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">200</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">, </span><span style="color:#79B8FF">1</span><span style="color:#F97583">fr</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Este código creará una cuadrícula con columnas que tienen al menos 200px de ancho y se expanden para llenar el espacio disponible. La palabra clave <code>auto-fill</code> permite que la cuadrícula cree automáticamente nuevas columnas según sea necesario.</p>
+<h2 id="browser-support">Browser Support</h2>
+<p>CSS Grid Layout es compatible con la mayoría de los navegadores modernos, incluidos Chrome, Firefox, Safari y Edge. Puedes utilizar CSS Grid Layout en tus proyectos web sin preocuparte por la compatibilidad con los navegadores.</p>
+<p>¡Esperamos que esta guía te haya ayudado a comprender mejor CSS Grid Layout y cómo puedes utilizarlo para crear diseños de páginas web modernas y responsivas!</p>

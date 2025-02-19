@@ -1,0 +1,38 @@
+<!DOCTYPE html><meta charset="utf-8"><h1 id="construyendo-una-api-rest-con-nodejs">Construyendo una API REST con Node.js</h1>
+<p>En este tutorial, construiremos una API RESTful utilizando Node.js y Express. Una API RESTful es una interfaz de programación de aplicaciones que sigue los principios de REST (Representational State Transfer). Utilizaremos Express, un marco de aplicaciones web de Node.js, para crear nuestra API.</p>
+<h2 id="instalación-de-nodejs">Instalación de Node.js</h2>
+<p>Primero, necesitas instalar Node.js en tu sistema. Puedes descargar Node.js desde el <a href="https://nodejs.org/">sitio web oficial</a>.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> init</span><span style="color:#79B8FF"> -y</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> express</span></span></code></pre>
+<p>Creamos un archivo <code>index.js</code> y agregamos el siguiente código:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> express</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> require</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'express'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> express</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> port</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 3000</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  res.</span><span style="color:#B392F0">send</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'Hello World!'</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">listen</span><span style="color:#E1E4E8">(port, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">log</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Server is running on http://localhost:${</span><span style="color:#E1E4E8">port</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>Para ejecutar la aplicación, ejecuta el siguiente comando:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">node</span><span style="color:#9ECBFF"> index.js</span></span></code></pre>
+<p>Ahora puedes acceder a tu aplicación en <code>http://localhost:3000</code>.</p>
+<h2 id="creación-de-rutas-para-la-api">Creación de rutas para la API</h2>
+<p>Vamos a crear algunas rutas para nuestra API. Por ejemplo, una ruta para obtener una lista de usuarios y otra ruta para obtener un usuario por su ID.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/users'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  res.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">([</span></span>
+<span class="line"><span style="color:#E1E4E8">    { id: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Alice'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">    { id: </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8">, name: </span><span style="color:#9ECBFF">'Bob'</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">  ]);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">app.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">'/api/users/:id'</span><span style="color:#E1E4E8">, (</span><span style="color:#FFAB70">req</span><span style="color:#E1E4E8">, </span><span style="color:#FFAB70">res</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> id</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> req.params.id;</span></span>
+<span class="line"><span style="color:#E1E4E8">  res.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">({ id, name: </span><span style="color:#9ECBFF">'Alice'</span><span style="color:#E1E4E8"> });</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>Ahora puedes acceder a la API de usuarios en <code>http://localhost:3000/api/users</code> y <code>http://localhost:3000/api/users/1</code>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>En este tutorial, hemos construido una API RESTful utilizando Node.js y Express. Puedes agregar más rutas y funcionalidades a tu API según tus necesidades. ¡Diviértete construyendo tu API!</p>
+<p>Espero que este tutorial te haya sido útil. Si tienes alguna pregunta, no dudes en dejar un comentario.</p>
