@@ -14,5 +14,5 @@ export default defineConfig({
   },
 
   integrations: [icon(),mdx()],
-  site: 'https://example.com'
+  site: 'https://judithbolanos.github.io/bytemind-blog/'
 });
