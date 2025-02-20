@@ -3,20 +3,28 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import TypeBlogpost from '@components/TypeBlogpost.astro';
 const blogposts = await getCollection('blog', (post) => post.data.isDraft === false);
+const blogs_recientes =blogposts.slice(0,4);
 import {siteConfig} from "@utils/Config";
 import ImageHeader from '@components/ImageHeader.astro';
 import imagheader from "../assets/images/coding.jpg";
+import CtaAutores from '@components/CtaAutores.astro';
+import Cta from '@components/Cta.astro';
 ---
 
 <Layout title={siteConfig.title}>
 	<!-- component -->
     <ImageHeader image={imagheader} title={siteConfig.title} description={siteConfig.description}/>
-<section class="bg-gray-900">
-    <div class="container px-6 py-10 mx-auto">
-        <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
-            {blogposts.map(post => (<TypeBlogpost post={post}/>))}
-        </div>  
-    </div>
-</section>
-	
+    <section class="bg-gray-900">
+        <div class="container px-6 py-10 mx-auto">
+            <h1 class="text-4xl text-amber-50 text-center my-4 py-4"> Blogs más recientes </h1>
+            <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
+                {blogs_recientes.map(post => (<TypeBlogpost post={post}/>))}
+            </div>  
+            <div class="text-center">
+                <a class="bg-teal-800 inline-flex justify-center mx-auto mt-6 mb-4 px-6 py-3 rounded-2xl items-center text-lg " href=`${siteConfig.basepath}blog/1`> Ver todos los blogs</a>
+            </div>
+        </div>
+    </section>
+    <CtaAutores />
+	<Cta title={'¡Suscríbete a nuestro RSS!'} text={'¿Qué es RSS? Es una forma sencilla de recibir todas las novedades de nuestro blog directamente en tu lector de noticias. ¡Suscríbete ahora!'} textbtn={'Suscríbete'} url={`${siteConfig.basepath}rss.xml`}/>
 </Layout>

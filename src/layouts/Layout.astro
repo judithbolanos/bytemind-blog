@@ -2,6 +2,7 @@
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 import Menu from 'src/components/Menu.astro';
+import Footer from '@components/Footer.astro';
 
 interface Props {
     title: string;
@@ -26,6 +27,7 @@ const { title } = Astro.props;
         <main class="mb-10 max-w-7xl m-auto p-2">
             <slot />
         </main>
+        <Footer />
         <script>
             import AOS from 'aos'; // Importa AOS desde el paquete instalado
 

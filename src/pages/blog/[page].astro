@@ -1,4 +1,7 @@
 ---
+import Cta from "@components/Cta.astro";
+import CtaAutores from "@components/CtaAutores.astro";
+import { siteConfig } from "@utils/Config";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
   // Type GetStaticPaths de Astro
@@ -13,8 +16,8 @@ import { getCollection } from "astro:content";
 
 <Layout title='Blog paginado'>
   <div class="py-10 mx-auto">
-    <h1 class="text-3xl font-semibold capitalize lg:text-4xl text-white">
-       Blog paginado
+    <h1 class="text-3xl font-semibold capitalize lg:text-4xl text-white text-center">
+       Nuestro Blog
     </h1>
   </div>
 
@@ -42,6 +45,8 @@ import { getCollection } from "astro:content";
       }}>Siguientes</a
     >
   </section>
+  <CtaAutores />
+	<Cta title={'¡Suscríbete a nuestro RSS!'} text={'¿Qué es RSS? Es una forma sencilla de recibir todas las novedades de nuestro blog directamente en tu lector de noticias. ¡Suscríbete ahora!'} textbtn={'Suscríbete'} url={`${siteConfig.basepath}rss.xml`}/>
 </Layout>
 
 <style>

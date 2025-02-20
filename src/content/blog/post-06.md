@@ -1,6 +1,6 @@
 ---
 title: Introducción a la programación
-date: 2025-01-01
+date: 2025-02-10
 description: La programación es una habilidad valiosa que puede abrir muchas puertas en el mundo laboral.
 author: jane-doe
 image: './images/post-12.png'
@@ -14,15 +14,20 @@ En este blog, encontrarás una variedad de artículos sobre programación, desde
 
 **Temas que cubriremos:**
 
-* **Lenguajes de programación:** Aprenderás sobre los diferentes lenguajes de programación y sus aplicaciones.
-* **Algoritmos:** Aprenderás a diseñar y analizar algoritmos para resolver problemas.
-* **Estructuras de datos:** Aprenderás sobre las diferentes estructuras de datos y cómo utilizarlas.
-* **Desarrollo web:** Aprenderás a crear sitios web y aplicaciones web.
-* **Desarrollo móvil:** Aprenderás a crear aplicaciones para dispositivos móviles.
-* **Desarrollo de juegos:** Aprenderás a crear juegos para computadoras y consolas.
+# Lenguajes de programación
+ Aprenderás sobre los diferentes lenguajes de programación y sus aplicaciones.
+# Algoritmos
+Aprenderás a diseñar y analizar algoritmos para resolver problemas.
+# Estructuras de datos
+Aprenderás sobre las diferentes estructuras de datos y cómo utilizarlas.
+# Desarrollo web:
+Aprenderás a crear sitios web y aplicaciones web.
+# Desarrollo móvil:
+ Aprenderás a crear aplicaciones para dispositivos móviles.
+# Desarrollo de juegos
+ Aprenderás a crear juegos para computadoras y consolas.
 
 **Además de los artículos, también encontrarás:**
-
 * **Tutoriales:** Te ayudarán a aprender nuevos conceptos y habilidades.
 * **Consejos y trucos:** Te ayudarán a mejorar tus habilidades de programación.
 * **Recursos:** Te ayudarán a encontrar más información sobre programación.

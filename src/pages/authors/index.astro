@@ -1,4 +1,5 @@
 ---
+import CtaBlog from '@components/CtaBlog.astro';
 import { siteConfig } from '@utils/Config';
 import { getCollection } from 'astro:content';
 import AuthorCard from 'src/components/AuthorCard.astro';
@@ -8,15 +9,13 @@ const autores= await getCollection('author');
 ---
 
 <Layout title='Judith Blog'>
-	<!-- component -->
 <section class="bg-gray-900">
     <div class="container px-6 py-10 mx-auto">
-        <h1 class="text-3xl font-semibold capitalize lg:text-4xl text-white">From the blog</h1>
-        <a class="text-blue-500 -underline-offset-1 my-3 pt-3" href=`${siteConfig.basepath}blog/1`>Ver todos los blogs</a>
-        <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
+        <h1 class="text-3xl font-semibold capitalize lg:text-4xl text-white text-center">Los autores que hacen posible ByteMind</h1>
+        <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-3">
             {autores.map(autor => (<AuthorCard author={autor.data} id={autor.id} />))}
          </div>
     </div>
 </section>
-	
+<CtaBlog title="Explora nuestros artículos y tutoriales" />
 </Layout>
