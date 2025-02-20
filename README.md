@@ -4,7 +4,7 @@ Este repositorio contiene el código fuente de un blog estático construido con 
 
 ## ¿Qué es Astro?
 
-[Astro](https://astro.build/) es un framework web que permite construir sitios estáticos rápidos con componentes de interfaz de usuario. Su arquitectura única permite renderizar solo el contenido necesario en el cliente, lo que se traduce en sitios web con un rendimiento excepcional.
+<a href="https://astro.build/" target="_blank" rel="noopener noreferrer">Astro</a> es un framework web que permite construir sitios estáticos rápidos con componentes de interfaz de usuario. Su arquitectura única permite renderizar solo el contenido necesario en el cliente, lo que se traduce en sitios web con un rendimiento excepcional.
 
 ## Arquitectura del proyecto
 
@@ -14,7 +14,7 @@ El proyecto se estructura de la siguiente manera:
 *   **`src/content/author`:** Contiene los archivos YAML con la información de los autores del blog.
 *   **`src/components`:** Contiene los componentes reutilizables de Astro que se utilizan en las diferentes páginas del blog.
 *   **`src/pages`:** Contiene las páginas del sitio web incluidas las del blog, las cuales son generadas a partir de las colecciones.
-*   **`src/icons`:** Contiene los iconos que se utilizan en el sitio web mediante [Astro icon](https://www.astroicon.dev/).
+*   **`src/icons`:** Contiene los iconos que se utilizan en el sitio web mediante <a href="https://www.astroicon.dev/" target="_blank" rel="noopener noreferrer">Astro icon</a>.
 *   **`src/styles`:** Contiene los estilos del sitio web.
 *   **`src/utils`:** Contiene la configuración básica como el nombre del sitio, descripción y demás información que se reutiliza en los diferentes componentes.
 *   **`astro.config.mjs`:** Archivo de configuración principal de Astro, donde se definen las opciones del proyecto, como la base URL para el despliegue en GitHub Pages.
@@ -50,42 +50,20 @@ Todos los comandos se ejecutan desde la raíz del proyecto, desde una terminal:
 | `npm run preview`         | Se puede visualizar el preview del build                  |
 
 ## Enlaces
-Puedes ver el blog en el siguiente link: [https://judithbolanos.github.io/bytemind-blog/](https://judithbolanos.github.io/bytemind-blog/)
+Puedes ver el blog en el siguiente link:<a href="https://judithbolanos.github.io/bytemind-blog/" target="_blank" rel="noopener noreferrer">https://judithbolanos.github.io/bytemind-blog/</a>.
+
 
 ## Imagenes
 
 <div class="grid-container">
   <div class="grid-item">
-    <img src="https://judithbl.com/uploads/home-bytemind.png" alt="Bytemind Home" width="400">
+    <img src="https://judithbl.com/uploads/home-bytemind.png" alt="Bytemind Home" width="600">
   </div>
   <div class="grid-item">
-    <img src="https://judithbl.com/uploads/blogs-bytemind.png" alt="Bytemind Blog" width="400">
+    <img src="https://judithbl.com/uploads/blogs-bytemind.png" alt="Bytemind Blog" width="600">
   </div>
    <div class="grid-item">
-    <img src="https://judithbl.com/uploads/blog-bytemind.png" alt="Bytemind Blog single" width="400">
+    <img src="https://judithbl.com/uploads/blog-bytemind.png" alt="Bytemind Blog single" width="600">
   </div>
 </div>
 
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 10px; 
-}
-
-.grid-item {
-  width: 100%; 
-}
-
-.grid-item img {
-  width: 100%;
-  height: auto;
-  display: block; 
-}
-
-@media (max-width: 768px) { 
-  .grid-container {
-    grid-template-columns: 1fr; 
-  }
-}
-</style>
