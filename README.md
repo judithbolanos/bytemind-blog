@@ -1,48 +1,91 @@
-# Astro Starter Kit: Basics
+# ByteMind Blog
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este repositorio contiene el código fuente de un blog estático construido con Astro. El blog presenta contenido de prueba, el objetivo de este proyecto es utilizar las colecciones de Astro para la gestión del contenido, paginación estática para una mejor experiencia de usuario y generación automática de un feed RSS.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## ¿Qué es Astro?
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[Astro](https://astro.build/) es un framework web que permite construir sitios estáticos rápidos con componentes de interfaz de usuario. Su arquitectura única permite renderizar solo el contenido necesario en el cliente, lo que se traduce en sitios web con un rendimiento excepcional.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Arquitectura del proyecto
 
-## 🚀 Project Structure
+El proyecto se estructura de la siguiente manera:
 
-Inside of your Astro project, you'll see the following folders and files:
+*   **`src/content/blog`:** Contiene los archivos Markdown con el contenido de los artículos del blog. Cada archivo representa un artículo individual y debe incluir metadatos como title, date, description, image, author, etc.
+*   **`src/content/author`:** Contiene los archivos YAML con la información de los autores del blog.
+*   **`src/components`:** Contiene los componentes reutilizables de Astro que se utilizan en las diferentes páginas del blog.
+*   **`src/pages`:** Contiene las páginas del sitio web incluidas las del blog, las cuales son generadas a partir de las colecciones.
+*   **`src/icons`:** Contiene los iconos que se utilizan en el sitio web mediante [Astro icon](https://www.astroicon.dev/).
+*   **`src/styles`:** Contiene los estilos del sitio web.
+*   **`src/utils`:** Contiene la configuración básica como el nombre del sitio, descripción y demás información que se reutiliza en los diferentes componentes.
+*   **`astro.config.mjs`:** Archivo de configuración principal de Astro, donde se definen las opciones del proyecto, como la base URL para el despliegue en GitHub Pages.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Puntos clave que puedes encontrar en este proyecto
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+###  Generación de contenido estático con colecciones de Astro
 
-## 🧞 Commands
+Astro permite gestionar el contenido del blog a través de "colecciones". Estas colecciones son conjuntos de archivos Markdown que se organizan en directorios específicos. En este proyecto, se utilizan dos colecciones principales:
 
-All commands are run from the root of the project, from a terminal:
+*   **`blog`:** Almacena los artículos del blog.
+*   **`authors`:** Almacena la información de los autores.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+La función `getCollection()` de Astro se utiliza para acceder a los datos de estas colecciones y generar las páginas del blog de forma dinámica durante el proceso de "build".
 
-## 👀 Want to learn more?
+### Paginación estática
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Para mejorar la navegación y el rendimiento del blog, se implementa la paginación estática. Astro genera automáticamente las páginas de paginación durante el "build", lo que permite dividir el contenido en múltiples páginas y evitar la carga de todos los artículos a la vez.
+
+### 3. Generación de Feed RSS
+
+El blog genera automáticamente un feed RSS que permite a los usuarios suscribirse a las actualizaciones y recibir notificaciones de nuevas publicaciones. El feed RSS se genera a partir de los datos de la colección `blog` y se actualiza cada vez que se realiza un nuevo "build".
+
+## 🧞 Comandos
+
+Todos los comandos se ejecutan desde la raíz del proyecto, desde una terminal:
+
+| Comando                   | Acción                                                    |
+| :------------------------ | :---------------------------------------------------------|
+| `npm install`             | Instalar dependencias                                     |
+| `npm run dev`             | Iniciar el servidor de manera local `localhost:4321`      |
+| `npm run build`           | Se realiza el build en la carpeta `./dist/`               |
+| `npm run preview`         | Se puede visualizar el preview del build                  |
+
+## Enlaces
+Puedes ver el blog en el siguiente link: [https://judithbolanos.github.io/bytemind-blog/](https://judithbolanos.github.io/bytemind-blog/)
+
+## Imagenes
+
+<div class="grid-container">
+  <div class="grid-item">
+    <img src="https://judithbl.com/uploads/home-bytemind.png" alt="Bytemind Home" width="400">
+  </div>
+  <div class="grid-item">
+    <img src="https://judithbl.com/uploads/blogs-bytemind.png" alt="Bytemind Blog" width="400">
+  </div>
+   <div class="grid-item">
+    <img src="https://judithbl.com/uploads/blog-bytemind.png" alt="Bytemind Blog single" width="400">
+  </div>
+</div>
+
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px; 
+}
+
+.grid-item {
+  width: 100%; 
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block; 
+}
+
+@media (max-width: 768px) { 
+  .grid-container {
+    grid-template-columns: 1fr; 
+  }
+}
+</style>
