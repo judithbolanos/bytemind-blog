@@ -4,6 +4,7 @@ import '../styles/global.css'
 import '../styles/blog.css'
 import Menu from 'src/components/Menu.astro';
 import {siteConfig} from "@utils/Config"
+import Footer from '@components/Footer.astro';
 interface Props {
 	title:string
 }
@@ -25,6 +26,7 @@ const {title} = Astro.props;
 			
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>
 

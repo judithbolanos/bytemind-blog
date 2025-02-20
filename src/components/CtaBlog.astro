@@ -1,0 +1,13 @@
+---
+const {title} = Astro.props;
+import {siteConfig} from "@utils/Config";
+---
+
+<section class="" data-aos="zoom-in-up" data-aos-offset="200" >
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-sm text-center">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold leading-tight text-amber-50">{title}</h2>
+            <a href=`${siteConfig.basepath}blog/1` class="bg-teal-800 inline-flex justify-center w-40 mt-2 mb-3 px-4 py-2 rounded-2xl items-center">Ver Blogs</a>
+        </div>
+    </div>
+</section>

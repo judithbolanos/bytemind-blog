@@ -1,0 +1,22 @@
+---
+interface Props {
+    title:String,
+    text:String,
+    url:String,
+    textbtn:String,
+}
+const {title, text, url , textbtn} = Astro.props;
+---
+<div class="text-amber-50">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class=" text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-teal-600 after:left-0 after:right-0 after:mx-auto after:rounded-full">{title}</h2>
+      <div class="mt-12">
+        <p class="text-base">{text}</p>
+      </div>
+
+      <div class="flex max-sm:flex-col justify-center gap-6 mt-12">
+        <a href=`${url}` type="button"
+          class="min-w-[140px] text-sm tracking-wider font-semibold bg-teal-800 inline-flex justify-center w-40 px-4 py-2 rounded-2xl items-center transition-all duration-300">{textbtn}</a>
+      </div>
+    </div>
+  </div>

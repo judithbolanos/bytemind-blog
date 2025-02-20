@@ -1,23 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import { siteConfig } from "@utils/Config";
+import {Icon} from "astro-icon/components"
 
 
 const {author , id} = Astro.props;
 ---
-    <div class="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5">
+    <div data-aos="fade-up-right"  class="max-w-lg mx-auto my-10 bg-white rounded-lg shadow-md p-5">
       <Image class="w-32 h-32 rounded-full mx-auto" src={author.avatar} alt={author.name}/>
-      <h2 class="text-center text-gray-600  text-2xl font-semibold mt-3">{author.name}</h2>
-      <p class="text-center text-gray-600 mt-1">{author.subtitle}</p>
+      <h2 class="text-center text-black  text-2xl font-semibold mt-3">{author.name}</h2>
+      <p class="text-center text-gray-700 mt-1">{author.subtitle}</p>
       <div class="flex justify-center mt-5">
-        <a href={author.twitter} class="text-blue-500 hover:text-blue-700 mx-3">Twitter</a>
-        <a href={author.linkedIn} class="text-blue-500 hover:text-blue-700 mx-3">LinkedIn</a>
-        <a href={author.github} class="text-blue-500 hover:text-blue-700 mx-3">GitHub</a>
+        <a href={author.twitter} class="text-black hover:text-teal-950 mx-3"><Icon name={`twitter`} size={28} /></a>
+        <a href={author.linkedIn} class="text-black hover:text-teal-950 mx-3"><Icon name={`linkedin`} size={28} /></a>
+        <a href={author.github} class="text-black hover:text-teal-950 mx-3"><Icon name={`github`} size={28} /></a>
       </div>
       <div class="mt-5">
-        <h3 class="text-gray-600 text-xl font-semibold">Bio</h3>
-        <p class="text-gray-600 mt-2">{author.bio}</p>
-        <a class="text-blue-500 hover:text-blue-700" href={`${siteConfig.basepath}blog/${id}`}> Conocer más</a>
+        <div class="text-gray-600 mt-2 mb-4">{author.bio}</div>
+        <a class="bg-teal-800 text-amber-50 px-4 py-2 rounded mt-4" href={`${siteConfig.basepath}blog/${id}`}> Ver blogs</a>
       </div>
     </div>
 

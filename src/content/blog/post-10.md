@@ -1,6 +1,6 @@
 ---
 title: Recursos para programadores
-date: 2025-02-11
+date: 2025-02-09
 description: Hay muchos recursos disponibles para programadores, tanto en línea como fuera de línea. En este blog, te proporcionaremos una lista de algunos de los mejores recursos para programadores.
 author: jane-doe
 image: './images/post-10.png'
@@ -10,12 +10,20 @@ tags: [CSS, Web Design, Frontend]
 
 Hay muchos recursos disponibles para programadores, tanto en línea como fuera de línea. En este blog, te proporcionaremos una lista de algunos de los mejores recursos para programadores.
 
-**Recursos en línea:**
+# Recursos en línea:
 
-* **Codecademy:** Un sitio web que ofrece cursos interactivos de programación.
-* **FreeCodeCamp:** Una comunidad de programadores que ofrece cursos gratuitos y proyectos.
-* **Udemy:** Una plataforma de aprendizaje en línea que ofrece cursos de programación de todos los niveles.
-* **Coursera:** Una plataforma de aprendizaje en línea que ofrece cursos de programación de las mejores universidades del mundo.
+## Codecademy
+Un sitio web que ofrece cursos interactivos de programación.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+## FreeCodeCamp
+Una comunidad de programadores que ofrece cursos gratuitos y proyectos.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Udemy
+Una plataforma de aprendizaje en línea que ofrece cursos de programación de todos los niveles.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Coursera
+Una plataforma de aprendizaje en línea que ofrece cursos de programación de las mejores universidades del mundo.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 **Recursos fuera de línea:**
 
@@ -26,5 +34,3 @@ Hay muchos recursos disponibles para programadores, tanto en línea como fuera d
 **Esperamos que estos recursos te ayuden a mejorar tus habilidades de programación.**
 
 **¡Esperamos que disfrutes leyendo nuestro blog!**
-
-**Si tienes alguna pregunta o sugerencia, no dudes en dejar un comentario a continuación.**
